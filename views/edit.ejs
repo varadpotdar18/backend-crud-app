@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit User</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+
+  <body>
+    <div
+      class="main-bg min-h-screen flex items-center justify-center p-10 overflow-hidden"
+    >
+      <div class="floating-circle one"></div>
+      <div class="floating-circle two"></div>
+
+      <div class="glass p-10 rounded-[2rem] w-full max-w-xl fade-up">
+        <div class="flex justify-between items-center mb-10">
+          <h1 class="text-4xl font-black gradient-text">Edit User</h1>
+
+          <a href="/read" class="glass px-4 py-2 rounded-full text-white">
+            Back
+          </a>
+        </div>
+
+        <form
+          action="/update/<%= editedUser._id %>"
+          method="POST"
+          class="flex flex-col gap-5"
+        >
+          <input
+            type="text"
+            name="name"
+            value="<%= editedUser.name %>"
+            class="custom-input"
+          />
+
+          <input
+            type="email"
+            name="email"
+            value="<%= editedUser.email %>"
+            class="custom-input"
+          />
+
+          <input
+            type="text"
+            name="image"
+            value="<%= editedUser.image %>"
+            class="custom-input"
+          />
+
+          <button class="update-btn">Update User</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
